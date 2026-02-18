@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Contacto | MedGO – Health Compliance &amp; Learning</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <script>
+    tailwind.config={theme:{extend:{colors:{primary:"#0f2a43","background-light":"#f6f7f8"},fontFamily:{display:["Inter","sans-serif"]}}}}
+  </script>
+  <style>
+    body{font-family:Inter,sans-serif;}
+    .material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 300,'GRAD' 0,'opsz' 24;}
+    .technical-grid{background-image:radial-gradient(#0f2a43 0.5px,transparent 0.5px);background-size:24px 24px;opacity:.05;}
+  </style>
+</head>
+
+<body class="bg-background-light text-primary font-display selection:bg-primary/10">
+
+<header class="sticky top-0 z-50 w-full border-b border-primary/5 bg-white/80 backdrop-blur-md">
+  <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+    <a class="flex items-center gap-2" href="/index.html">
+      <span class="material-symbols-outlined text-3xl font-bold">shield_with_heart</span>
+      <span class="text-2xl font-extrabold tracking-tight">MedGO</span>
+    </a>
+    <nav class="hidden md:flex items-center gap-10">
+      <a class="text-sm font-medium hover:text-primary/70 transition-colors" href="/servicios.html">Servicios</a>
+      <a class="text-sm font-medium hover:text-primary/70 transition-colors" href="/metodologia.html">Metodología</a>
+      <a class="text-sm font-medium hover:text-primary/70 transition-colors" href="/nosotros.html">Nosotros</a>
+      <a class="text-sm font-medium hover:text-primary/70 transition-colors" href="/contacto.html">Contacto</a>
+    </nav>
+    <a href="https://wa.me/56988286667" target="_blank" rel="noopener"
+       class="bg-primary text-white px-6 py-2.5 rounded-lg text-sm font-bold hover:bg-primary/90 transition-all shadow-sm">
+      WhatsApp
+    </a>
+  </div>
+</header>
+
+<main>
+  <section class="relative overflow-hidden bg-white border-b border-primary/5 pt-16 pb-16">
+    <div class="absolute inset-0 technical-grid pointer-events-none"></div>
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+      <h1 class="text-4xl md:text-5xl font-black tracking-tight mb-4">Contacto</h1>
+      <p class="text-primary/70 max-w-3xl">
+        Escribe por WhatsApp o correo. Si lo deseas, te respondemos con un primer encuadre (alcance, plazos y entregables).
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="bg-primary rounded-2xl p-10 md:p-14 text-center text-white shadow-2xl relative overflow-hidden">
+        <div class="absolute -bottom-20 -right-20 w-64 h-64 bg-white/5 rounded-full blur-3xl"></div>
+        <div class="absolute -top-20 -left-20 w-64 h-64 bg-white/5 rounded-full blur-3xl"></div>
+
+        <h2 class="text-2xl md:text-4xl font-black mb-5 leading-tight">¿Listo para elevar tus estándares de cumplimiento?</h2>
+        <p class="text-base md:text-lg text-white/70 mb-8 max-w-2xl mx-auto">
+          Agenda una conversación breve y definimos el siguiente paso.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="https://wa.me/56988286667" target="_blank" rel="noopener"
+             class="bg-white text-primary px-10 py-4 rounded-xl text-lg font-bold hover:bg-background-light transition-all shadow-lg hover:shadow-xl active:scale-95">
+            WhatsApp +56 9 8828 6667
+          </a>
+          <a href="mailto:contacto@medgo.cl"
+             class="border border-white/30 text-white px-10 py-4 rounded-xl text-lg font-bold hover:bg-white/10 transition-all">
+            contacto@medgo.cl
+          </a>
+        </div>
+      </div>
+
+      <div class="mt-10 p-10 bg-white border border-primary/5 rounded-2xl">
+        <h3 class="text-xl font-black mb-4">Qué información ayuda para responder rápido</h3>
+        <ul class="text-primary/70 space-y-2 text-sm leading-relaxed">
+          <li>• Tipo de establecimiento (centro médico, dental, ELEAM, etc.).</li>
+          <li>• Objetivo (auditoría, capacitación, acreditación, mejora de procesos).</li>
+          <li>• Plazo deseado y si existe fiscalización/auditoría próxima.</li>
+          <li>• Región/comuna y disponibilidad de documentación base.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="bg-primary text-white pt-12 pb-10">
+  <div class="max-w-7xl mx-auto px-6 text-xs text-white/50 flex flex-col md:flex-row justify-between gap-4">
+    <p>© <span id="y"></span> MedGO. Todos los derechos reservados.</p>
+    <p>contacto@medgo.cl · +56 9 8828 6667</p>
+  </div>
+  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+</footer>
+
+</body>
+</html>

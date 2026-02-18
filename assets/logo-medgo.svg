@@ -1,19 +1,31 @@
 <!--?xml version="1.0" encoding="UTF-8"?-->
-<svg viewBox="0 0 320 350" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 1200 400" xmlns="http://www.w3.org/2000/svg">
 
-  <!-- Mitad izquierda -->
-  <path d="M160 0 L0 40 L0 190 C0 270 80 320 160 350 Z" fill="#0F2A44"></path>
+  <!-- ESCUDO -->
+  <g transform="translate(60,50)">
+    <!-- Mitad izquierda -->
+    <path d="M140 0 L0 40 L0 190 C0 260 70 300 140 320 Z" fill="#0F2A44"></path>
+    <!-- Mitad derecha -->
+    <path d="M140 0 L280 40 L280 190 C280 260 210 300 140 320 Z" fill="#0E5A6F"></path>
 
-  <!-- Mitad derecha -->
-  <path d="M160 0 L320 40 L320 190 C320 270 240 320 160 350 Z" fill="#0E5A6F"></path>
+    <!-- Documento -->
+    <rect x="80" y="75" width="80" height="60" rx="6" fill="#FFFFFF"></rect>
+    <line x1="95" y1="95" x2="145" y2="95" stroke="#0F2A44" stroke-width="4"></line>
+    <line x1="95" y1="110" x2="145" y2="110" stroke="#0F2A44" stroke-width="4"></line>
+    <line x1="95" y1="125" x2="130" y2="125" stroke="#0F2A44" stroke-width="4"></line>
 
-  <!-- Documento -->
-  <rect x="110" y="80" width="100" height="70" rx="8" fill="#FFFFFF"></rect>
-  <line x1="125" y1="105" x2="185" y2="105" stroke="#0F2A44" stroke-width="5"></line>
-  <line x1="125" y1="120" x2="185" y2="120" stroke="#0F2A44" stroke-width="5"></line>
-  <line x1="125" y1="135" x2="170" y2="135" stroke="#0F2A44" stroke-width="5"></line>
+    <!-- Check -->
+    <path d="M60 185 L110 230 L220 110" fill="none" stroke="#FFFFFF" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"></path>
+  </g>
 
-  <!-- Check -->
-  <path d="M70 210 L130 260 L250 130" fill="none" stroke="#FFFFFF" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"></path>
+  <!-- WORDMARK -->
+  <text x="400" y="200" font-family="Inter, Arial, sans-serif" font-size="150" font-weight="700" fill="#0F2A44">Med</text>
+
+  <text x="690" y="200" font-family="Inter, Arial, sans-serif" font-size="150" font-weight="700" fill="#0E5A6F">GO</text>
+
+  <!-- DESCRIPTOR -->
+  <text x="405" y="270" font-family="Inter, Arial, sans-serif" font-size="50" font-weight="400" fill="#1F2933">
+        Health Compliance &amp; Learning
+  </text>
 
 </svg>

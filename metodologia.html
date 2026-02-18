@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Metodología | MedGO – Health Compliance &amp; Learning</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <script>
+    tailwind.config={theme:{extend:{colors:{primary:"#0f2a43","background-light":"#f6f7f8"},fontFamily:{display:["Inter","sans-serif"]}}}}
+  </script>
+  <style>
+    body{font-family:Inter,sans-serif;}
+    .material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 300,'GRAD' 0,'opsz' 24;}
+    .technical-grid{background-image:radial-gradient(#0f2a43 0.5px,transparent 0.5px);background-size:24px 24px;opacity:.05;}
+  </style>
+</head>
+
+<body class="bg-background-light text-primary font-display selection:bg-primary/10">
+
+<header class="sticky top-0 z-50 w-full border-b border-primary/5 bg-white/80 backdrop-blur-md">
+  <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+    <a class="flex items-center gap-2" href="/index.html">
+      <span class="material-symbols-outlined text-3xl font-bold">shield_with_heart</span>
+      <span class="text-2xl font-extrabold tracking-tight">MedGO</span>
+    </a>
+    <nav class="hidden md:flex items-center gap-10">
+      <a class="text-sm font-medium hover:text-primary/70 transition-colors" href="/servicios.html">Servicios</a>
+      <a class="text-sm font-medium hover:text-primary/70 transition-colors" href="/metodologia.html">Metodología</a>
+      <a class="text-sm font-medium hover:text-primary/70 transition-colors" href="/nosotros.html">Nosotros</a>
+      <a class="text-sm font-medium hover:text-primary/70 transition-colors" href="/contacto.html">Contacto</a>
+    </nav>
+    <a href="/contacto.html" class="bg-primary text-white px-6 py-2.5 rounded-lg text-sm font-bold hover:bg-primary/90 transition-all shadow-sm">
+      Contactar
+    </a>
+  </div>
+</header>
+
+<main>
+  <section class="relative overflow-hidden bg-white border-b border-primary/5 pt-16 pb-16">
+    <div class="absolute inset-0 technical-grid pointer-events-none"></div>
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+      <h1 class="text-4xl md:text-5xl font-black tracking-tight mb-4">Metodología</h1>
+      <p class="text-primary/70 max-w-3xl">
+        Metodología estructurada para resultados auditables: alcance claro, evidencia verificable y seguimiento real.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="relative p-8 rounded-xl border border-primary/5 bg-background-light/30">
+          <span class="text-5xl font-black text-primary/10 absolute top-4 right-6 italic">01</span>
+          <h4 class="text-lg font-bold mb-3 mt-4">Levantamiento y alcance</h4>
+          <p class="text-sm text-primary/60 leading-relaxed">Objetivos, revisión documental y definición de entregables.</p>
+        </div>
+        <div class="relative p-8 rounded-xl border border-primary/5 bg-background-light/30">
+          <span class="text-5xl font-black text-primary/10 absolute top-4 right-6 italic">02</span>
+          <h4 class="text-lg font-bold mb-3 mt-4">Diagnóstico y brechas</h4>
+          <p class="text-sm text-primary/60 leading-relaxed">Brechas vs. estándar, riesgo, evidencia y priorización.</p>
+        </div>
+        <div class="relative p-8 rounded-xl border border-primary/5 bg-background-light/30">
+          <span class="text-5xl font-black text-primary/10 absolute top-4 right-6 italic">03</span>
+          <h4 class="text-lg font-bold mb-3 mt-4">Plan + implementación</h4>
+          <p class="text-sm text-primary/60 leading-relaxed">Mejora de procesos + capacitación aplicada a brechas críticas.</p>
+        </div>
+        <div class="relative p-8 rounded-xl border border-primary/5 bg-background-light/30">
+          <span class="text-5xl font-black text-primary/10 absolute top-4 right-6 italic">04</span>
+          <h4 class="text-lg font-bold mb-3 mt-4">Verificación y seguimiento</h4>
+          <p class="text-sm text-primary/60 leading-relaxed">Cierre, control de sostenibilidad y recomendaciones.</p>
+        </div>
+      </div>
+
+      <div class="mt-12 p-10 rounded-2xl border border-primary/5 bg-background-light/40">
+        <h2 class="text-2xl font-black mb-4">Entregables típicos</h2>
+        <ul class="text-primary/70 space-y-2 text-sm leading-relaxed">
+          <li>• Informe ejecutivo con hallazgos y riesgos.</li>
+          <li>• Matriz de cumplimiento y evidencia.</li>
+          <li>• Plan de mejora priorizado (acciones, responsables, plazos).</li>
+          <li>• Evidencias de capacitación y control documental.</li>
+          <li>• Acta de cierre / verificación.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="bg-primary text-white pt-12 pb-10">
+  <div class="max-w-7xl mx-auto px-6 text-xs text-white/50 flex flex-col md:flex-row justify-between gap-4">
+    <p>© <span id="y"></span> MedGO. Todos los derechos reservados.</p>
+    <p>contacto@medgo.cl · +56 9 8828 6667</p>
+  </div>
+  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+</footer>
+
+</body>
+</html>

@@ -1,100 +1,313 @@
-<!doctype html>
-<html lang="es">
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>MedGO – Health Compliance & Learning</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MedGO – Health Compliance &amp; Learning</title>
   <meta name="description" content="Gestión, capacitación y auditoría en procesos sanitarios y acreditación en salud." />
-  <link rel="stylesheet" href="medgo-theme.css" />
+
+  <!-- Tailwind (MVP) -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@200..700,0..1&display=swap" rel="stylesheet" />
+
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#0F2A44",           // oficial
+            secondary: "#0E5A6F",         // oficial
+            "background-light": "#F7F8FA",// oficial
+            "background-dark": "#13191F",
+          },
+          fontFamily: {
+            display: ["Inter", "sans-serif"],
+          },
+          borderRadius: {
+            DEFAULT: "0.5rem",
+            lg: "0.75rem",
+            xl: "1rem",
+            full: "9999px",
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 420, 'GRAD' 0, 'opsz' 24;
+    }
+    .technical-grid {
+      background-image: radial-gradient(#0F2A44 0.5px, transparent 0.5px);
+      background-size: 24px 24px;
+      opacity: 0.05;
+    }
+  </style>
 </head>
 
-<body>
+<body class="bg-background-light text-primary font-display selection:bg-primary/10">
 
-  <header class="hero">
-    <div class="container">
-      <div class="kicker">MedGO</div>
-      <h1 class="title">MedGO – Health Compliance &amp; Learning</h1>
-      <p class="subtitle">Gestión, capacitación y auditoría en procesos sanitarios y acreditación en salud</p>
+  <!-- Top Navigation -->
+  <header class="sticky top-0 z-50 w-full border-b border-primary/5 bg-white/85 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <a class="flex items-center gap-2" href="#inicio" aria-label="MedGO">
+        <!-- Recomendación: sin ícono cliché. Si quieres un ícono neutro: policy / fact_check -->
+        <span class="text-2xl font-extrabold tracking-tight">MedGO</span>
+        <span class="hidden sm:inline text-xs font-bold uppercase tracking-widest text-primary/60">
+          Health Compliance &amp; Learning
+        </span>
+      </a>
 
-      <div class="cta">
-        <a class="btn btn-primary" href="https://wa.me/56988286667" target="_blank" rel="noopener">WhatsApp</a>
-        <a class="btn btn-secondary" href="#contacto">Contacto</a>
-      </div>
+      <nav class="hidden md:flex items-center gap-10">
+        <a class="text-sm font-medium hover:text-primary/70 transition-colors" href="#servicios">Servicios</a>
+        <a class="text-sm font-medium hover:text-primary/70 transition-colors" href="#metodologia">Metodología</a>
+        <a class="text-sm font-medium hover:text-primary/70 transition-colors" href="#contacto">Contacto</a>
+      </nav>
 
-      <div class="meta">
-        <span>Correo: <a href="mailto:contacto@medgo.cl">contacto@medgo.cl</a></span>
-        <span>Tel/WhatsApp: <a href="tel:+56988286667">+56 9 8828 6667</a></span>
+      <div class="flex items-center gap-3">
+        <a href="https://wa.me/56988286667" target="_blank" rel="noopener"
+           class="bg-primary text-white px-6 py-2.5 rounded-lg text-sm font-bold hover:bg-primary/90 transition-all shadow-sm">
+          WhatsApp
+        </a>
       </div>
     </div>
   </header>
 
   <main>
-    <section class="section" id="servicios">
-      <div class="container">
-        <h2 class="h2">Servicios</h2>
-        <p class="lead">Enfoque principal: gestión, auditoría y capacitación aplicada. Acompañamiento regulatorio solo cuando corresponde.</p>
 
-        <div class="grid">
-          <article class="card">
-            <h3 class="h3">Gestión y auditoría</h3>
-            <p>Diagnóstico de brechas, auditoría documental y en terreno, matrices de riesgo y plan de mejora priorizado.</p>
-          </article>
+    <!-- Hero Section -->
+    <section id="inicio" class="relative overflow-hidden bg-white border-b border-primary/5 pt-20 pb-28">
+      <div class="absolute inset-0 technical-grid pointer-events-none"></div>
 
-          <article class="card">
-            <h3 class="h3">Capacitación aplicada</h3>
-            <p>Talleres por rol y establecimiento, guías y plantillas, evaluación y evidencias de participación.</p>
-          </article>
+      <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <div class="max-w-4xl">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/5 text-primary text-xs font-bold tracking-wider uppercase mb-8">
+            <span class="material-symbols-outlined text-base">fact_check</span>
+            Gestión · Auditoría · Capacitación
+          </div>
 
-          <article class="card">
-            <h3 class="h3">Sistemas documentales</h3>
-            <p>Protocolos, manuales, registros, control de versiones y estandarización de procesos críticos.</p>
-          </article>
+          <h1 class="text-4xl md:text-6xl font-black text-primary leading-[1.1] tracking-tight mb-6">
+            Cumplimiento sanitario y acreditación con evidencia
+          </h1>
+
+          <p class="text-base md:text-xl text-primary/75 leading-relaxed max-w-2xl mb-10">
+            Diseñamos y ejecutamos planes de mejora auditables: diagnóstico de brechas, capacitación aplicada y sistemas documentales para sostener resultados.
+          </p>
+
+          <div class="flex flex-wrap gap-4">
+            <a href="#servicios" class="bg-primary text-white px-8 py-4 rounded-lg text-base font-bold hover:shadow-xl hover:-translate-y-0.5 transition-all">
+              Ver servicios
+            </a>
+            <a href="#contacto" class="border border-primary/20 text-primary px-8 py-4 rounded-lg text-base font-bold hover:bg-primary/5 transition-all">
+              Contacto
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero image (opcional) -->
+      <div class="absolute right-0 top-1/2 -translate-y-1/2 w-1/2 h-[78%] rounded-l-[120px] -z-10 hidden lg:block overflow-hidden opacity-25">
+        <img alt="Entorno institucional y gestión" class="w-full h-full object-cover"
+             src="/assets/hero.jpg"
+             onerror="this.style.display='none';" />
+      </div>
+    </section>
+
+    <!-- 3 Pillars Section -->
+    <section id="servicios" class="bg-background-light py-24">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="mb-14">
+          <h2 class="text-3xl font-bold tracking-tight text-primary">Servicios</h2>
+          <div class="h-1.5 w-12 bg-primary mt-4 rounded-full"></div>
+          <p class="mt-4 text-primary/70 max-w-2xl">
+            Enfoque principal: gestión, auditoría y capacitación aplicada. Acompañamiento regulatorio solo cuando corresponde.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+          <div class="group p-10 bg-white border border-primary/5 rounded-xl hover:shadow-2xl hover:shadow-primary/5 transition-all duration-300">
+            <div class="h-40 mb-6 rounded-lg overflow-hidden bg-primary/5">
+              <img alt="Auditoría y diagnóstico" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                   src="/assets/audit.jpg" onerror="this.style.display='none';" />
+            </div>
+            <div class="w-14 h-14 bg-primary/5 rounded-lg flex items-center justify-center text-primary mb-8 group-hover:bg-primary group-hover:text-white transition-colors">
+              <span class="material-symbols-outlined text-3xl">search_check</span>
+            </div>
+            <h3 class="text-xl font-bold mb-4">Auditoría y diagnóstico</h3>
+            <p class="text-primary/70 leading-relaxed">
+              Evaluación técnica de procesos, brechas y evidencias. Informe accionable con priorización y trazabilidad.
+            </p>
+          </div>
+
+          <div class="group p-10 bg-white border border-primary/5 rounded-xl hover:shadow-2xl hover:shadow-primary/5 transition-all duration-300">
+            <div class="h-40 mb-6 rounded-lg overflow-hidden bg-primary/5">
+              <img alt="Capacitación aplicada" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                   src="/assets/training.jpg" onerror="this.style.display='none';" />
+            </div>
+            <div class="w-14 h-14 bg-primary/5 rounded-lg flex items-center justify-center text-primary mb-8 group-hover:bg-primary group-hover:text-white transition-colors">
+              <span class="material-symbols-outlined text-3xl">school</span>
+            </div>
+            <h3 class="text-xl font-bold mb-4">Capacitación aplicada</h3>
+            <p class="text-primary/70 leading-relaxed">
+              Programas prácticos por rol, con materiales, evaluación y evidencias para auditoría y mejora continua.
+            </p>
+          </div>
+
+          <div class="group p-10 bg-white border border-primary/5 rounded-xl hover:shadow-2xl hover:shadow-primary/5 transition-all duration-300">
+            <div class="h-40 mb-6 rounded-lg overflow-hidden bg-primary/5">
+              <img alt="Sistemas documentales" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                   src="/assets/governance.jpg" onerror="this.style.display='none';" />
+            </div>
+            <div class="w-14 h-14 bg-primary/5 rounded-lg flex items-center justify-center text-primary mb-8 group-hover:bg-primary group-hover:text-white transition-colors">
+              <span class="material-symbols-outlined text-3xl">verified_user</span>
+            </div>
+            <h3 class="text-xl font-bold mb-4">Sistemas documentales</h3>
+            <p class="text-primary/70 leading-relaxed">
+              Protocolos, manuales, registros y control de versiones para sostener cumplimiento en el tiempo.
+            </p>
+          </div>
+
         </div>
       </div>
     </section>
 
-    <section class="section alt" id="contacto">
-      <div class="container">
-        <h2 class="h2">Contacto</h2>
-        <p class="lead">Cuéntanos tu tipo de establecimiento, comuna y el apoyo que necesitas. Responderemos con próximos pasos.</p>
-
-        <div class="contact-box">
-          <div>
-            <div class="label">Correo</div>
-            <a class="strong" href="mailto:contacto@medgo.cl">contacto@medgo.cl</a>
-          </div>
-
-          <div>
-            <div class="label">WhatsApp</div>
-            <a class="strong" href="https://wa.me/56988286667" target="_blank" rel="noopener">+56 9 8828 6667</a>
-          </div>
-
-          <div>
-            <div class="label">Dominio</div>
-            <a class="strong" href="https://medgo.cl" target="_blank" rel="noopener">medgo.cl</a>
-          </div>
+    <!-- Method Section -->
+    <section id="metodologia" class="py-20 bg-white border-y border-primary/5">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-14">
+          <h2 class="text-4xl font-black tracking-tight text-primary mb-3">Metodología</h2>
+          <p class="text-primary/70 max-w-xl mx-auto">Trabajo estructurado para resultados auditables y sostenibles.</p>
         </div>
 
-        <div style="margin-top:16px;">
-          <a class="btn btn-primary" href="https://wa.me/56988286667" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div class="relative p-8 rounded-xl border border-primary/5 bg-background-light/40">
+            <span class="text-5xl font-black text-primary/10 absolute top-4 right-6 italic">01</span>
+            <h4 class="text-lg font-bold mb-3 mt-4">Alcance</h4>
+            <p class="text-sm text-primary/70 leading-relaxed">Objetivos, revisión base y definición de entregables.</p>
+          </div>
+
+          <div class="relative p-8 rounded-xl border border-primary/5 bg-background-light/40">
+            <span class="text-5xl font-black text-primary/10 absolute top-4 right-6 italic">02</span>
+            <h4 class="text-lg font-bold mb-3 mt-4">Diagnóstico</h4>
+            <p class="text-sm text-primary/70 leading-relaxed">Brechas vs. estándar, evidencias y riesgos priorizados.</p>
+          </div>
+
+          <div class="relative p-8 rounded-xl border border-primary/5 bg-background-light/40">
+            <span class="text-5xl font-black text-primary/10 absolute top-4 right-6 italic">03</span>
+            <h4 class="text-lg font-bold mb-3 mt-4">Plan + implementación</h4>
+            <p class="text-sm text-primary/70 leading-relaxed">Mejoras y capacitación dirigida a brechas detectadas.</p>
+          </div>
+
+          <div class="relative p-8 rounded-xl border border-primary/5 bg-background-light/40">
+            <span class="text-5xl font-black text-primary/10 absolute top-4 right-6 italic">04</span>
+            <h4 class="text-lg font-bold mb-3 mt-4">Verificación</h4>
+            <p class="text-sm text-primary/70 leading-relaxed">Cierre y seguimiento con trazabilidad de acciones.</p>
+          </div>
         </div>
       </div>
     </section>
+
+    <!-- Contact CTA -->
+    <section id="contacto" class="py-20 bg-white relative overflow-hidden">
+      <div class="absolute inset-0 technical-grid pointer-events-none opacity-[0.03]"></div>
+      <div class="max-w-5xl mx-auto px-6 relative z-10">
+        <div class="bg-primary rounded-[2rem] p-10 md:p-16 text-center text-white shadow-2xl relative overflow-hidden">
+          <div class="absolute -bottom-20 -right-20 w-64 h-64 bg-white/5 rounded-full blur-3xl"></div>
+          <div class="absolute -top-20 -left-20 w-64 h-64 bg-white/5 rounded-full blur-3xl"></div>
+
+          <h2 class="text-3xl md:text-5xl font-black mb-5 leading-tight">Contacto</h2>
+          <p class="text-lg text-white/75 mb-8 max-w-2xl mx-auto">
+            Agenda una conversación breve para definir alcance, plazos y próximos pasos.
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-3 justify-center">
+            <a class="bg-white text-primary px-8 py-4 rounded-xl text-base font-bold hover:bg-background-light transition-all shadow-lg hover:shadow-xl active:scale-95"
+               href="https://wa.me/56988286667" target="_blank" rel="noopener">
+              WhatsApp +56 9 8828 6667
+            </a>
+            <a class="border border-white/35 text-white px-8 py-4 rounded-xl text-base font-bold hover:bg-white/10 transition-all"
+               href="mailto:contacto@medgo.cl">
+              contacto@medgo.cl
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
-  <footer class="footer">
-    <div class="container footer-inner">
-      <div>
-        <div class="footer-brand">MedGO – Health Compliance &amp; Learning</div>
-        <div class="footer-note">Gestión, capacitación y auditoría en procesos sanitarios y acreditación en salud.</div>
-      </div>
-      <div class="footer-small">© <span id="y"></span> MedGO · <a href="mailto:contacto@medgo.cl">contacto@medgo.cl</a></div>
-    </div>
-  </footer>
+  <!-- Footer -->
+  <footer class="bg-primary text-white pt-16 pb-10">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 mb-14">
+        <div class="md:col-span-5">
+          <div class="flex items-center gap-2 mb-6">
+            <span class="text-2xl font-extrabold tracking-tight">MedGO</span>
+          </div>
+          <p class="text-white/70 leading-relaxed max-w-sm">
+            Gestión, capacitación y auditoría en procesos sanitarios y acreditación en salud. Evidencia y trazabilidad como base del trabajo.
+          </p>
+        </div>
 
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
+        <div class="md:col-span-3">
+          <h5 class="font-bold mb-5 uppercase tracking-widest text-xs text-white/60">Enlaces</h5>
+          <ul class="space-y-3 text-sm font-medium">
+            <li><a class="hover:text-white/80 transition-colors" href="#servicios">Servicios</a></li>
+            <li><a class="hover:text-white/80 transition-colors" href="#metodologia">Metodología</a></li>
+            <li><a class="hover:text-white/80 transition-colors" href="#contacto">Contacto</a></li>
+          </ul>
+        </div>
+
+        <div class="md:col-span-4">
+          <h5 class="font-bold mb-5 uppercase tracking-widest text-xs text-white/60">Contacto</h5>
+          <ul class="space-y-5">
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-white/60">mail</span>
+              <div>
+                <p class="text-xs text-white/50 mb-0.5">Correo</p>
+                <a class="text-base font-medium hover:text-white/80 transition-colors" href="mailto:contacto@medgo.cl">contacto@medgo.cl</a>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-white/60">call</span>
+              <div>
+                <p class="text-xs text-white/50 mb-0.5">WhatsApp</p>
+                <a class="text-base font-medium hover:text-white/80 transition-colors" href="https://wa.me/56988286667" target="_blank" rel="noopener">+56 9 8828 6667</a>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-white/60">language</span>
+              <div>
+                <p class="text-xs text-white/50 mb-0.5">Sitio</p>
+                <a class="text-base font-medium hover:text-white/80 transition-colors" href="https://medgo.cl" target="_blank" rel="noopener">medgo.cl</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/50">
+        <p>© <span id="y"></span> MedGO. Todos los derechos reservados.</p>
+        <div class="flex gap-6">
+          <a class="hover:text-white/70 transition-colors" href="#">Privacidad</a>
+          <a class="hover:text-white/70 transition-colors" href="#">Términos</a>
+        </div>
+      </div>
+    </div>
+
+    <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+  </footer>
 
 </body>
 </html>

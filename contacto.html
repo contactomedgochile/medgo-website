@@ -157,26 +157,38 @@ document.getElementById("medgoForm").addEventListener("submit", function(e) {
   const formData = new FormData(this);
   const data = Object.fromEntries(formData.entries());
 
-fetch("https://script.google.com/macros/s/AKfycbztohEfXzdlcfw2bPuwKgiCBmBZpyamZ2GFtUFHEx4k619va0F8nrCOp788tHNGc5CrrA/exec", {
+fetch("https://script.google.com/macros/s/AKfycbx4tbPA8xFwKDh6yk9yRO_7QHGtnMclHxqk0fgrgs4i-G-31DhZu922_q-ApajBMk515w/exec", {
   method: "POST",
-  mode: "no-cors",
   headers: {
     "Content-Type": "application/json"
   },
   body: JSON.stringify(data)
 })
-.then(() => {
-  formStatus.classList.remove("hidden");
-  formStatus.classList.remove("text-red-600");
-  formStatus.classList.add("text-green-600");
-  formStatus.textContent = "Solicitud enviada correctamente. Te contactaremos pronto.";
-  this.reset();
+.then(response => response.json())
+.then(result => {
+
+  if (result.status === "success") {
+
+    formStatus.classList.remove("hidden");
+    formStatus.classList.remove("text-red-600");
+    formStatus.classList.add("text-green-600");
+    formStatus.textContent = "Solicitud enviada correctamente.";
+    this.reset();
+
+  } else {
+
+    formStatus.classList.remove("hidden");
+    formStatus.classList.remove("text-green-600");
+    formStatus.classList.add("text-red-600");
+    formStatus.textContent = result.message;
+
+  }
+
 })
-.catch(() => {
+.catch(error => {
   formStatus.classList.remove("hidden");
-  formStatus.classList.remove("text-green-600");
   formStatus.classList.add("text-red-600");
-  formStatus.textContent = "Error al enviar. Intenta nuevamente.";
+  formStatus.textContent = "Error de conexión.";
 });
 });
 </script>

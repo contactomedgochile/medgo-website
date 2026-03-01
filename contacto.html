@@ -1,197 +1,84 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contacto | MedGO – Health Compliance & Learning</title>
+<form id="contactForm" class="space-y-6">
 
-  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <input name="nombre" type="text" placeholder="Nombre completo"
+    required pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]{3,60}"
+    title="Solo letras y espacios (mínimo 3 caracteres)"
+    class="w-full border rounded-lg p-3" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <input name="correo" type="email" placeholder="Correo electrónico"
+    required
+    class="w-full border rounded-lg p-3" />
 
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            primary: "#0f2a43",
-            "background-light": "#f6f7f8"
-          },
-          fontFamily: {
-            display: ["Inter", "sans-serif"]
-          }
-        }
-      }
-    }
-  </script>
+  <input name="telefono" type="text" placeholder="+569XXXXXXXX"
+    required pattern="\+569\d{8}"
+    title="Debe tener formato +569XXXXXXXX"
+    class="w-full border rounded-lg p-3" />
 
-  <style>
-    body { font-family: Inter, sans-serif; }
-    .technical-grid {
-      background-image: radial-gradient(#0f2a43 0.5px, transparent 0.5px);
-      background-size: 24px 24px;
-      opacity: .05;
-    }
-  </style>
-</head>
+  <input name="empresa" type="text" placeholder="Empresa (opcional)"
+    class="w-full border rounded-lg p-3" />
 
-<body class="bg-background-light text-primary font-display selection:bg-primary/10">
+  <select name="servicio" required
+    class="w-full border rounded-lg p-3">
+    <option value="">Seleccione servicio</option>
+    <option value="Acreditación">Acreditación</option>
+    <option value="Cumplimiento sanitario">Cumplimiento sanitario</option>
+    <option value="Capacitación">Capacitación</option>
+    <option value="Asesoría técnica">Asesoría técnica</option>
+  </select>
 
-<!-- HEADER -->
-<header class="sticky top-0 z-50 w-full border-b border-primary/5 bg-white/80 backdrop-blur-md">
-  <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-    <a href="index.html" class="flex items-center">
-      <img src="/assets/logo-medgo.svg" alt="MedGO Logo" class="h-10 w-auto">
-    </a>
+  <textarea name="mensaje" rows="4"
+    placeholder="Describe tu necesidad (mínimo 10 caracteres)"
+    required minlength="10"
+    class="w-full border rounded-lg p-3"></textarea>
 
-    <nav class="hidden md:flex items-center gap-10">
-      <a class="text-sm font-medium hover:text-primary/70 transition-colors" href="/servicios.html">Servicios</a>
-      <a class="text-sm font-medium hover:text-primary/70 transition-colors" href="/metodologia.html">Metodología</a>
-      <a class="text-sm font-medium hover:text-primary/70 transition-colors" href="/nosotros.html">Nosotros</a>
-      <a class="text-sm font-medium hover:text-primary/70 transition-colors" href="/contacto.html">Contacto</a>
-    </nav>
+  <button type="submit"
+    class="bg-primary text-white px-6 py-3 rounded-lg font-bold">
+    Enviar solicitud
+  </button>
 
-    <a href="https://wa.me/56988286667" target="_blank" rel="noopener"
-       class="bg-primary text-white px-6 py-2.5 rounded-lg text-sm font-bold hover:bg-primary/90 transition-all shadow-sm">
-      WhatsApp
-    </a>
-  </div>
-</header>
+  <p id="formStatus" class="hidden text-sm mt-2"></p>
 
-<main>
+</form>
 
-  <!-- HERO -->
-  <section class="relative overflow-hidden bg-white border-b border-primary/5 pt-16 pb-16">
-    <div class="absolute inset-0 technical-grid pointer-events-none"></div>
-    <div class="max-w-7xl mx-auto px-6 relative z-10">
-      <h1 class="text-4xl md:text-5xl font-black tracking-tight mb-4">Contacto</h1>
-      <p class="text-primary/70 max-w-3xl">
-        Escríbenos y te responderemos con un primer encuadre (alcance, plazos y entregables).
-      </p>
-    </div>
-  </section>
-
-  <!-- FORMULARIO -->
-  <section class="py-16">
-    <div class="max-w-3xl mx-auto px-6">
-
-      <div class="bg-white p-10 rounded-2xl border border-primary/5 shadow-sm">
-        <h2 class="text-2xl font-black mb-6">Envíanos tu solicitud</h2>
-
-        <form id="medgoForm" class="space-y-6">
-
-          <div>
-            <label class="block text-sm font-semibold mb-2">Nombre completo</label>
-            <input type="text" name="nombre" required
-              class="w-full rounded-lg border border-primary/20 focus:border-primary focus:ring-primary"/>
-          </div>
-
-          <div>
-            <label class="block text-sm font-semibold mb-2">Correo electrónico</label>
-            <input type="email" name="correo" required
-              class="w-full rounded-lg border border-primary/20 focus:border-primary focus:ring-primary"/>
-          </div>
-
-          <div>
-            <label class="block text-sm font-semibold mb-2">Teléfono</label>
-            <input type="text" name="telefono"
-              class="w-full rounded-lg border border-primary/20 focus:border-primary focus:ring-primary"/>
-          </div>
-
-          <div>
-            <label class="block text-sm font-semibold mb-2">Empresa / Institución</label>
-            <input type="text" name="empresa"
-              class="w-full rounded-lg border border-primary/20 focus:border-primary focus:ring-primary"/>
-          </div>
-
-          <div>
-            <label class="block text-sm font-semibold mb-2">Servicio de interés</label>
-            <select name="servicio"
-              class="w-full rounded-lg border border-primary/20 focus:border-primary focus:ring-primary">
-              <option>Cumplimiento sanitario</option>
-              <option>Acreditación en salud</option>
-              <option>Capacitación</option>
-              <option>Asesoría técnica</option>
-            </select>
-          </div>
-
-          <div>
-            <label class="block text-sm font-semibold mb-2">Mensaje</label>
-            <textarea name="mensaje" rows="4"
-              class="w-full rounded-lg border border-primary/20 focus:border-primary focus:ring-primary"></textarea>
-          </div>
-
-          <button type="submit"
-            class="w-full bg-primary text-white py-4 rounded-xl font-bold hover:bg-primary/90 transition-all shadow-lg">
-            Enviar solicitud
-          </button>
-
-          <p id="formStatus" class="text-center text-sm font-medium mt-4 hidden"></p>
-
-        </form>
-      </div>
-
-    </div>
-  </section>
-
-</main>
-
-<!-- FOOTER -->
-<footer class="bg-primary text-white pt-12 pb-10">
-  <div class="max-w-7xl mx-auto px-6 text-xs text-white/50 flex flex-col md:flex-row justify-between gap-4">
-    <p>© <span id="y"></span> MedGO. Todos los derechos reservados.</p>
-    <p>contacto@medgo.cl · +56 9 8828 6667</p>
-  </div>
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
-</footer>
-
-<!-- SCRIPT CONEXIÓN APPS SCRIPT -->
 <script>
-document.getElementById("medgoForm").addEventListener("submit", function(e) {
-  e.preventDefault();
+document.getElementById("contactForm").addEventListener("submit", function(e) {
 
+  e.preventDefault();
   const formStatus = document.getElementById("formStatus");
   const formData = new FormData(this);
-  const data = Object.fromEntries(formData.entries());
 
-fetch("https://script.google.com/macros/s/AKfycbx4tbPA8xFwKDh6yk9yRO_7QHGtnMclHxqk0fgrgs4i-G-31DhZu922_q-ApajBMk515w/exec", {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json"
-  },
-  body: JSON.stringify(data)
-})
-.then(response => response.json())
-.then(result => {
-
-  if (result.status === "success") {
+  fetch("https://script.google.com/macros/s/AKfycbwxRHIq-_3ZBlb9oVXkTC56pwMBY9dFW-QxF32zElami9ST4R8TZljnS51ME89Cufdfng/exec", {
+    method: "POST",
+    body: formData
+  })
+  .then(response => response.json())
+  .then(result => {
 
     formStatus.classList.remove("hidden");
-    formStatus.classList.remove("text-red-600");
-    formStatus.classList.add("text-green-600");
-    formStatus.textContent = "Solicitud enviada correctamente.";
-    this.reset();
 
-  } else {
+    if (result.status === "success") {
+
+      formStatus.classList.remove("text-red-600");
+      formStatus.classList.add("text-green-600");
+      formStatus.textContent = "Solicitud enviada correctamente.";
+      this.reset();
+
+    } else {
+
+      formStatus.classList.remove("text-green-600");
+      formStatus.classList.add("text-red-600");
+      formStatus.textContent = result.message;
+
+    }
+
+  })
+  .catch(error => {
 
     formStatus.classList.remove("hidden");
-    formStatus.classList.remove("text-green-600");
     formStatus.classList.add("text-red-600");
-    formStatus.textContent = result.message;
+    formStatus.textContent = "Error de conexión con el servidor.";
 
-  }
+  });
 
-})
-.catch(error => {
-  formStatus.classList.remove("hidden");
-  formStatus.classList.add("text-red-600");
-  formStatus.textContent = "Error de conexión.";
-});
 });
 </script>
-
-</body>
-</html>

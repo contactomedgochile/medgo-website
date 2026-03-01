@@ -157,24 +157,27 @@ document.getElementById("medgoForm").addEventListener("submit", function(e) {
   const formData = new FormData(this);
   const data = Object.fromEntries(formData.entries());
 
-  fetch("https://script.google.com/macros/s/AKfycbxyJ_5Xpm0EiJxA4mAIOw19wnnw7vhtmtC3HrOfQYgVEIQDk6rWL6BrrziUCWA0Nja-1A/exec", {
-    method: "POST",
-    body: JSON.stringify(data)
-  })
-  .then(response => response.json())
-  .then(result => {
-    formStatus.classList.remove("hidden");
-    formStatus.classList.remove("text-red-600");
-    formStatus.classList.add("text-green-600");
-    formStatus.textContent = "Solicitud enviada correctamente. Te contactaremos pronto.";
-    this.reset();
-  })
-  .catch(error => {
-    formStatus.classList.remove("hidden");
-    formStatus.classList.remove("text-green-600");
-    formStatus.classList.add("text-red-600");
-    formStatus.textContent = "Ocurrió un error al enviar la solicitud.";
-  });
+fetch("https://script.google.com/macros/s/AKfycbztohEfXzdlcfw2bPuwKgiCBmBZpyamZ2GFtUFHEx4k619va0F8nrCOp788tHNGc5CrrA/exec", {
+  method: "POST",
+  mode: "no-cors",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify(data)
+})
+.then(() => {
+  formStatus.classList.remove("hidden");
+  formStatus.classList.remove("text-red-600");
+  formStatus.classList.add("text-green-600");
+  formStatus.textContent = "Solicitud enviada correctamente. Te contactaremos pronto.";
+  this.reset();
+})
+.catch(() => {
+  formStatus.classList.remove("hidden");
+  formStatus.classList.remove("text-green-600");
+  formStatus.classList.add("text-red-600");
+  formStatus.textContent = "Error al enviar. Intenta nuevamente.";
+});
 });
 </script>
 

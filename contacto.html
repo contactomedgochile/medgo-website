@@ -1,49 +1,168 @@
-<form id="contactForm" class="space-y-6">
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Contacto | MedGO – Health Compliance & Learning</title>
 
-  <input name="nombre" type="text" placeholder="Nombre completo"
-    required pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]{3,60}"
-    title="Solo letras y espacios (mínimo 3 caracteres)"
-    class="w-full border rounded-lg p-3" />
+<script src="https://cdn.tailwindcss.com?plugins=forms"></script>
 
-  <input name="correo" type="email" placeholder="Correo electrónico"
-    required
-    class="w-full border rounded-lg p-3" />
-
-  <input name="telefono" type="text" placeholder="+569XXXXXXXX"
-    required pattern="\+569\d{8}"
-    title="Debe tener formato +569XXXXXXXX"
-    class="w-full border rounded-lg p-3" />
-
-  <input name="empresa" type="text" placeholder="Empresa (opcional)"
-    class="w-full border rounded-lg p-3" />
-
-  <select name="servicio" required
-    class="w-full border rounded-lg p-3">
-    <option value="">Seleccione servicio</option>
-    <option value="Acreditación">Acreditación</option>
-    <option value="Cumplimiento sanitario">Cumplimiento sanitario</option>
-    <option value="Capacitación">Capacitación</option>
-    <option value="Asesoría técnica">Asesoría técnica</option>
-  </select>
-
-  <textarea name="mensaje" rows="4"
-    placeholder="Describe tu necesidad (mínimo 10 caracteres)"
-    required minlength="10"
-    class="w-full border rounded-lg p-3"></textarea>
-
-  <button type="submit"
-    class="bg-primary text-white px-6 py-3 rounded-lg font-bold">
-    Enviar solicitud
-  </button>
-
-  <p id="formStatus" class="hidden text-sm mt-2"></p>
-
-</form>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet"/>
 
 <script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        primary: "#0F2A44",
+        accent: "#0E5A6F",
+        backgroundLight: "#F7F8FA",
+        textPrimary: "#1F2933",
+        textSecondary: "#4B5563"
+      },
+      fontFamily: {
+        display: ["Inter", "sans-serif"]
+      }
+    }
+  }
+}
+</script>
+
+<style>
+body { font-family: Inter, sans-serif; }
+</style>
+</head>
+
+<body class="bg-backgroundLight text-textPrimary">
+
+<header class="bg-white border-b border-primary/10">
+  <div class="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center">
+    <a href="index.html">
+      <img src="/assets/logo-medgo.svg" alt="MedGO" class="h-9">
+    </a>
+    <nav class="hidden md:flex gap-10 text-sm font-semibold text-primary">
+      <a href="servicios.html" class="hover:opacity-70">Servicios</a>
+      <a href="metodologia.html" class="hover:opacity-70">Metodología</a>
+      <a href="nosotros.html" class="hover:opacity-70">Nosotros</a>
+      <a href="contacto.html" class="opacity-70">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<main class="py-20">
+
+  <div class="max-w-3xl mx-auto px-6">
+
+    <h1 class="text-4xl font-extrabold text-primary mb-6">
+      Contacto
+    </h1>
+
+    <p class="text-textSecondary mb-12 leading-relaxed">
+      Completa el formulario. Evaluaremos tu requerimiento y responderemos con un encuadre técnico preliminar.
+    </p>
+
+    <div class="bg-white border border-primary/10 rounded-xl p-10">
+
+      <form id="contactForm" class="space-y-6">
+
+        <div>
+          <label class="block text-sm font-semibold text-primary mb-2">
+            Nombre completo
+          </label>
+          <input name="nombre" type="text"
+            required pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]{3,60}"
+            title="Solo letras y espacios (mínimo 3 caracteres)"
+            class="w-full border border-primary/20 rounded-lg p-3 focus:outline-none focus:ring-1 focus:ring-primary">
+        </div>
+
+        <div>
+          <label class="block text-sm font-semibold text-primary mb-2">
+            Correo electrónico
+          </label>
+          <input name="correo" type="email"
+            required
+            class="w-full border border-primary/20 rounded-lg p-3 focus:outline-none focus:ring-1 focus:ring-primary">
+        </div>
+
+        <div>
+          <label class="block text-sm font-semibold text-primary mb-2">
+            Teléfono
+          </label>
+          <input name="telefono" type="text"
+            placeholder="+569XXXXXXXX"
+            required pattern="\+569\d{8}"
+            title="Debe tener formato +569XXXXXXXX"
+            class="w-full border border-primary/20 rounded-lg p-3 focus:outline-none focus:ring-1 focus:ring-primary">
+          <p class="text-xs text-textSecondary mt-1">
+            Formato obligatorio: +56 seguido de 9 dígitos.
+          </p>
+        </div>
+
+        <div>
+          <label class="block text-sm font-semibold text-primary mb-2">
+            Empresa (opcional)
+          </label>
+          <input name="empresa" type="text"
+            class="w-full border border-primary/20 rounded-lg p-3 focus:outline-none focus:ring-1 focus:ring-primary">
+        </div>
+
+        <div>
+          <label class="block text-sm font-semibold text-primary mb-2">
+            Servicio requerido
+          </label>
+          <select name="servicio" required
+            class="w-full border border-primary/20 rounded-lg p-3 focus:outline-none focus:ring-1 focus:ring-primary">
+            <option value="">Seleccione</option>
+            <option value="Acreditación">Acreditación</option>
+            <option value="Cumplimiento sanitario">Cumplimiento sanitario</option>
+            <option value="Capacitación">Capacitación</option>
+            <option value="Asesoría técnica">Asesoría técnica</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-sm font-semibold text-primary mb-2">
+            Descripción del requerimiento
+          </label>
+          <textarea name="mensaje" rows="5"
+            required minlength="10"
+            class="w-full border border-primary/20 rounded-lg p-3 focus:outline-none focus:ring-1 focus:ring-primary"></textarea>
+          <p class="text-xs text-textSecondary mt-1">
+            Mínimo 10 caracteres.
+          </p>
+        </div>
+
+        <button type="submit"
+          class="w-full bg-primary text-white py-3 rounded-lg font-semibold hover:opacity-90 transition">
+          Enviar solicitud
+        </button>
+
+        <p id="formStatus" class="hidden text-sm mt-3"></p>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</main>
+
+<footer class="bg-primary text-white py-8 mt-20">
+  <div class="max-w-7xl mx-auto px-6 text-xs flex justify-between">
+    <p>© <span id="year"></span> MedGO. Todos los derechos reservados.</p>
+    <p>contacto@medgo.cl · +56 9 8828 6667</p>
+  </div>
+</footer>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+
 document.getElementById("contactForm").addEventListener("submit", function(e) {
 
   e.preventDefault();
+
   const formStatus = document.getElementById("formStatus");
   const formData = new FormData(this);
 
@@ -57,28 +176,25 @@ document.getElementById("contactForm").addEventListener("submit", function(e) {
     formStatus.classList.remove("hidden");
 
     if (result.status === "success") {
-
       formStatus.classList.remove("text-red-600");
       formStatus.classList.add("text-green-600");
       formStatus.textContent = "Solicitud enviada correctamente.";
       this.reset();
-
     } else {
-
       formStatus.classList.remove("text-green-600");
       formStatus.classList.add("text-red-600");
       formStatus.textContent = result.message;
-
     }
 
   })
-  .catch(error => {
-
+  .catch(() => {
     formStatus.classList.remove("hidden");
     formStatus.classList.add("text-red-600");
     formStatus.textContent = "Error de conexión con el servidor.";
-
   });
 
 });
 </script>
+
+</body>
+</html>
